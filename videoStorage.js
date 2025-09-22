@@ -1,27 +1,26 @@
 function numberOfVideos(videoSize, videoUnit, driveSize, driveUnit) {
+  let videoByte = 0;
+  let driveByte = 0;
 
-let videoByte = 0;
-let driveByte = 0;
-
-if(driveUnit !== "GB" && driveUnit !==  "TB"){
+  if (driveUnit !== "GB" && driveUnit !== "TB") {
     console.log("Invalid drive unit");
     return;
-} 
-  if(videoUnit === "B") {
+  }
+  if (videoUnit === "B") {
     console.log("Invalid video unit");
-      return;
+    return;
   }
 
-  if(videoUnit === "KB")  videoByte = videoSize * 1000;
-  if(videoUnit === "MB") videoByte = videoSize * 1000 * 1000;
-  if(videoUnit === "GB") videoByte = videoSize * 1000 * 1000 * 1000;
+  if (videoUnit === "KB") videoByte = videoSize * 1000;
+  if (videoUnit === "MB") videoByte = videoSize * 1000 * 1000;
+  if (videoUnit === "GB") videoByte = videoSize * 1000 * 1000 * 1000;
 
-  if(driveUnit === "GB") driveByte = driveSize * 1000 * 1000 * 1000;
-  if(driveUnit === "TB") driveByte = driveSize * 1000 * 1000 * 1000 * 1000;
+  if (driveUnit === "GB") driveByte = driveSize * 1000 * 1000 * 1000;
+  if (driveUnit === "TB") driveByte = driveSize * 1000 * 1000 * 1000 * 1000;
 
-  console.log("output", Math.floor(driveByte/videoByte));
+  console.log("output", Math.floor(driveByte / videoByte));
 
-  return Math.floor(driveByte/videoByte);
+  return Math.floor(driveByte / videoByte);
 }
 
 numberOfVideos(500, "MB", 100, "GB");
@@ -29,11 +28,6 @@ numberOfVideos(2000, "B", 1, "TB");
 numberOfVideos(2000, "MB", 100000, "MB");
 numberOfVideos(500000, "KB", 2, "TB");
 numberOfVideos(1.5, "GB", 2.2, "TB");
-
-
-
-
-
 
 // 21 SEPT 2025
 
@@ -52,6 +46,3 @@ numberOfVideos(1.5, "GB", 2.2, "TB");
 // 1 GB	1000 MB
 // 1 TB	1000 GB
 // For example, given 500, "MB", 100, and "GB as arguments, determine how many 500 MB videos can fit on a 100 GB hard drive.
-
-
-
